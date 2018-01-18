@@ -56,10 +56,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             edges {
               node {
                 frontmatter {
-                  date
-                  path
                   title
+                  date(formatString: "MMM DD, YYYY")
+                  path
                   tags
+                  excerpt
+                  slug
                 }
               }
             }

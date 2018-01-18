@@ -5,6 +5,12 @@ import Link from "gatsby-link";
 import Disqus from "disqus-react";
 import * as SITE from "../constants.js";
 
+const curlyStart = "{";
+const curlyEnd = "}";
+const squareStart = "[";
+const squareEnd = "]";
+const twoSlashes = " //";
+
 const Title = styled.h2`
   font-size: 1.6em;
   padding-left: 0;
@@ -96,6 +102,20 @@ const TagLink = styled(Link)`
   display: inline-block;
 `;
 
+const TopicHash = ({ tagName }) => {
+  const TagValue = styled.span`
+    color: #e06c75; // red
+  `;
+
+  return (
+    <span>
+      {curlyStart}
+      topic: <TagValue>{tagName}</TagValue>
+      {curlyEnd}
+    </span>
+  );
+};
+
 const KeyWord = styled.span`
   color: #c678dd; // purple
 `;
@@ -117,6 +137,7 @@ const Function = styled.span`
 `;
 
 export const FakeCode = styled.div`
+  color: #d7dae0; // light gray
   font-size: 0.8rem;
   font-family: "Ubuntu Mono", monospace;
 
@@ -125,40 +146,38 @@ export const FakeCode = styled.div`
   }
 `;
 
-const curlyStart = () => "{";
-const curlyEnd = () => "}";
-const squareStart = () => "[";
-const squareEnd = () => "]";
-const twoSlashes = () => " //";
-
 export const FakeClass = () => (
   <Title>
     <KeyWord>class </KeyWord>
     <ClassName>MyBlog </ClassName>
     <KeyWord>extends </KeyWord>
     <Argument>GregBurger </Argument>
-    {curlyStart()}
+    {curlyStart}
   </Title>
 );
 
-export const FakeFunction = () => (
+export const FakeFunction = ({ tagName }) => (
   <Indent1>
     <KeyWord>function </KeyWord>
-    <Function>getBlogPosts</Function>() {curlyStart()}
+    <Function>getBlogPosts</Function>({tagName ? (
+      <TopicHash tagName={tagName} />
+    ) : (
+      ""
+    )}) {curlyStart}
   </Indent1>
 );
 
 export const FakeReturn = () => (
   <Indent2>
-    <KeyWord>return</KeyWord> {curlyStart()}
+    <KeyWord>return</KeyWord> {curlyStart}
   </Indent2>
 );
 
 export const FakeEndBrackets = () => (
   <div>
-    <Indent2>{curlyEnd()}</Indent2>
-    <Indent1>{curlyEnd()}</Indent1>
-    <Indent0>{curlyEnd()}</Indent0>
+    <Indent2>{curlyEnd}</Indent2>
+    <Indent1>{curlyEnd}</Indent1>
+    <Indent0>{curlyEnd}</Indent0>
   </div>
 );
 
@@ -176,7 +195,7 @@ export const PostDetails = ({ frontmatter }) => {
         <TitleLink to={frontmatter.path}>{frontmatter.title}</TitleLink>
       </PostTitle>
       <PostExcerpt>
-        {twoSlashes()} {frontmatter.excerpt}
+        {twoSlashes} {frontmatter.excerpt}
       </PostExcerpt>
       <PostData>
         <VarLeft>date</VarLeft> = <Argument>"{frontmatter.date}"</Argument>
@@ -191,7 +210,7 @@ export const PostDetails = ({ frontmatter }) => {
         </Argument>
       </PostData>
       <PostData>
-        <VarLeft>topics</VarLeft> = {squareStart()}
+        <VarLeft>topics</VarLeft> = {squareStart}
         {frontmatter.tags.map(tag => {
           return (
             <Tag key={tag}>
@@ -201,7 +220,7 @@ export const PostDetails = ({ frontmatter }) => {
             </Tag>
           );
         })}
-        {squareEnd()}
+        {squareEnd}
       </PostData>
     </Post>
   );

@@ -1,30 +1,50 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react";
+import styled from "styled-components";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
+
+import {
+  FakeCode,
+  FakeClass,
+  FakeFunction,
+  FakeReturn,
+  FakeEndBrackets,
+  PostDetails
+} from "../components/homepage.js";
+
+const TagpageHelmet = ({ tagName }) => {
+  return (
+    <Helmet
+      title="99 Lines of Code"
+      meta={[
+        {
+          name: "description",
+          content: `All the posts about ${tagName}`
+        },
+        { name: "keywords", content: { tagName } }
+      ]}
+    />
+  );
+};
 
 const Tags = ({ pathContext }) => {
-  const { posts, tagName } = pathContext
+  const { posts, tagName } = pathContext;
 
-  if (posts) {
-    return (
-      <div>
-        <span>
-          Posts about { tagName }:
-        </span>
+  return (
+    <FakeCode>
+      <TagpageHelmet tagName={tagName} />
+      <FakeClass />
+      <FakeFunction tagName={tagName} />
+      <FakeReturn />
 
-        <ul>
-          { posts.map(post => {
-            return (
-              <li>
-                <Link to={ post.node.frontmatter.path }>
-                  { post.node.frontmatter.title }
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-    )
-  }
-}
+      {posts.map(({ node: post }) => {
+        const { frontmatter } = post;
+        return <PostDetails frontmatter={frontmatter} key={frontmatter.slug} />;
+      })}
 
-export default Tags
+      <FakeEndBrackets />
+    </FakeCode>
+  );
+};
+
+export default Tags;

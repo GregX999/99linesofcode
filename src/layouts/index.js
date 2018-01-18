@@ -31,7 +31,8 @@ class TemplateWrapper extends React.Component {
   }
 
   setBodyClass() {
-    if (this.props.location.pathname == "/") {
+    const path = this.props.location.pathname;
+    if (path == "/" || path.substring(0, 6) == "/tags/") {
       document.body.classList.add("darkBackground");
       document.body.classList.remove("whiteBackground");
     } else {
