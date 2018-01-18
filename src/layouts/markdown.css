@@ -1,0 +1,80 @@
+article p,
+article ul,
+article ol,
+article blockquote {
+  margin-bottom: 1.2em;
+}
+
+article h3 {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+article a {
+  color: steelblue;
+  text-decoration: underline;
+}
+
+article a:hover {
+  color: lightseagreen;
+  text-decoration: underline;
+}
+
+article strong {
+  font-weight: bold;
+}
+
+article em {
+  font-style: italic;
+}
+
+article ul li {
+  list-style: disc;
+  margin-left: 1.5em;
+}
+
+article ol li {
+  list-style: decimal;
+  margin-left: 1.5em;
+}
+
+article img {
+  display: block;
+  zoom: 50%;
+  margin: 0 auto;
+}
+
+article blockquote {
+  border: 1px solid peachpuff;
+  background-color: papayawhip;
+  border-radius: 0.5em;
+  padding: 0.5em 1em 0 1em;
+  margin: 0 2em 1.5em 2em;
+}
+
+article blockquote p,
+article blockquote h3 {
+  margin-bottom: 0.5em;
+}
+
+/* article p code {
+  display: inline-block;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  color: white;
+  background: black;
+  margin: 0 0.2em;
+  padding: 0 0.2em;
+} */
+
+article pre[class*="language-"] {
+  font-size: 0.8em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+
+  @media (min-width: 490px) {
+    font-size: 0.9rem;
+  }
+}
