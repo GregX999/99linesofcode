@@ -49,7 +49,7 @@ class TemplateWrapper extends React.Component {
         />
         <Header />
         <Content content={this.props.children()} />
-        <Footer />
+        <Footer pathname={this.props.location.pathname} />
       </div>
     );
   }

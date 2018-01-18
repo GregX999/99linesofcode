@@ -69,7 +69,7 @@ ArticleFooter.propTypes = {
 // Local components
 //
 
-const Title = styled.h2`
+export const Title = styled.h2`
   font-family: "Ubuntu Mono", monospace;
   font-size: 2rem;
   margin-bottom: 0.5rem;

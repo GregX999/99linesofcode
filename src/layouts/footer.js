@@ -21,15 +21,18 @@ const FooterLink = styled(Link)`
   }
 `;
 
-const Footer = ({ page }) => (
-  <FooterBar>
-    Site made by <FooterLink to="">Greg Burger</FooterLink> using <FooterLink to="http://www.gatsbyjs.org">Gatsby</FooterLink>.
-    Source code available on <FooterLink to="">GitHub</FooterLink>.
+const Footer = ({ pathname }) => (
+  <FooterBar
+    style={pathname == "/404/" ? { position: "fixed", bottom: "0px" } : {}}
+  >
+    Site made by <FooterLink to="">Greg Burger</FooterLink> using{" "}
+    <FooterLink to="http://www.gatsbyjs.org">Gatsby</FooterLink>. Source code
+    available on <FooterLink to="">GitHub</FooterLink>.
   </FooterBar>
 );
 
 Footer.propTypes = {
-  page: PropTypes.oneOf(['homepage','index'])
-}
+  pathname: PropTypes.string
+};
 
 export default Footer;

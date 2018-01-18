@@ -1,10 +1,16 @@
-import React from 'react'
+import React from "react";
+import Link from "gatsby-link";
+import { Title } from "../components/blog-post.js";
 
 const NotFoundPage = () => (
   <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Title>Not Found</Title>
+    <p>You just hit a route that doesn&#39;t exist... oh, the sadness. 🙁</p>
+    <p>
+      But you can head to <Link to="/">the homepage</Link> and try to find what
+      you're looking for.
+    </p>
   </div>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;
