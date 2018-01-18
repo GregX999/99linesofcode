@@ -8,7 +8,7 @@ const NotFoundPage = () => (
     <p>You just hit a route that doesn&#39;t exist... oh, the sadness. 🙁</p>
     <p>
       But you can head to <Link to="/">the homepage</Link> and try to find what
-      you're looking for.
+      you&#39;re looking for.
     </p>
   </div>
 );

@@ -3,6 +3,32 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Link from "gatsby-link";
 
+export const Content = styled.div`
+  font-size: 1rem;
+  line-height: 1.5em;
+  margin: 2rem 0;
+`;
+
+export const Title = styled.h2`
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+`;
+
+const LineItem = styled.div`
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+`;
+
+const Tag = styled.span`
+  &:not(:last-child)::after {
+    content: ", ";
+  }
+`;
+
+const TagLink = styled(Link)``;
+
 export const ArticleHeader = ({ frontmatter }) => {
   const HeaderWrapper = styled.header``;
   return (
@@ -26,15 +52,9 @@ export const ArticleHeader = ({ frontmatter }) => {
   );
 };
 
-ArticleHeader.propTypes = {
-  frontmatter: PropTypes.object
-};
-
-export const Content = styled.div`
-  font-size: 1rem;
-  line-height: 1.5em;
-  margin: 2rem 0;
-`;
+// ArticleHeader.propTypes = {
+//   frontmatter: PropTypes.object
+// };
 
 export const ArticleFooter = ({ next, prev }) => {
   const FooterWraper = styled.footer`
@@ -60,31 +80,10 @@ export const ArticleFooter = ({ next, prev }) => {
   );
 };
 
-ArticleFooter.propTypes = {
-  next: PropTypes.object,
-  prev: PropTypes.object
-};
+// ArticleFooter.propTypes = {
+//   next: PropTypes.object,
+//   prev: PropTypes.object
+// };
 
-//
-// Local components
-//
-
-export const Title = styled.h2`
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-`;
-
-const LineItem = styled.div`
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-`;
-
-const Tag = styled.span`
-  &:not(:last-child)::after {
-    content: ", ";
-  }
-`;
-
-const TagLink = styled(Link)``;
+const BlogPost = () => <div></div>;
+export default BlogPost;

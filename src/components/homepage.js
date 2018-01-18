@@ -229,3 +229,6 @@ export const PostDetails = ({ frontmatter }) => {
 PostDetails.propTypes = {
   frontmatter: PropTypes.object
 };
+
+const Homepage = () => <div></div>;
+export default Homepage;

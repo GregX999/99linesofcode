@@ -23,34 +23,7 @@ const BlogPostHelmet = ({ frontmatter }) => {
   );
 };
 
-class DiscussThread extends React.Component {
-  componentDidMount() {
-    if (document.getElementById("discus_thread_script")) {
-      DISQUS.reset({
-        reload: true,
-        config: this.disqus_config
-      });
-    } else {
-      var d = document,
-        s = d.createElement("script");
-      s.src = "https://99linesofcode.disqus.com/embed.js";
-      s.id = "discus_thread_script";
-      s.setAttribute("data-timestamp", +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  }
-
-  disqus_config() {
-    this.page.url = `${SITE.SITE_URL}/${this.props.frontmatter.slug}`;
-    this.page.identifier = this.props.frontmatter.slug;
-  }
-
-  render() {
-    return <div id="disqus_thread" />;
-  }
-}
-
-const Template = ({ data, location, pathContext }) => {
+const BlogPost = ({ data, location, pathContext }) => {
   const { markdownRemark: post } = data;
   const { frontmatter, html } = post;
   const { prev, next } = pathContext;
@@ -95,4 +68,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Template;
+export default BlogPost;
