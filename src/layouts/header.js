@@ -19,6 +19,7 @@ const HeaderBar = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  flex-shrink: 0;
 `;
 
 const Header = () => (

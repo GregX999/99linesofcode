@@ -21,6 +21,12 @@ injectGlobal`
   }
 `;
 
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
 class TemplateWrapper extends React.Component {
   componentDidMount() {
     this.setBodyClass();
@@ -43,15 +49,15 @@ class TemplateWrapper extends React.Component {
 
   render() {
     return (
-      <div>
+      <Page>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans:400|Ubuntu+Mono&amp;subset=latin-ext"
           rel="stylesheet"
         />
         <Header />
         <Content content={this.props.children()} />
-        <Footer pathname={this.props.location.pathname} />
-      </div>
+        <Footer />
+      </Page>
     );
   }
 }

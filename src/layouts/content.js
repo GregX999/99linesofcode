@@ -6,6 +6,7 @@ const ContentWrapper = styled.main`
   width: auto;
   padding: 0 16px;
   margin: 6rem auto 2rem auto;
+  flex: 1 0 auto;
 
   @media (min-width: 490px) {
     width: auto;

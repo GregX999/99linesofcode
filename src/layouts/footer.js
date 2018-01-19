@@ -11,6 +11,7 @@ const FooterBar = styled.footer`
   text-align: center;
   padding: 0.75rem;
   width: 100%;
+  flex-shrink: 0;
 `;
 
 const FooterLink = styled(Link)`
@@ -21,18 +22,16 @@ const FooterLink = styled(Link)`
   }
 `;
 
-const Footer = ({ pathname }) => (
-  <FooterBar
-    style={pathname == "/404/" ? { position: "fixed", bottom: "0px" } : {}}
-  >
-    Site made by <FooterLink to="">Greg Burger</FooterLink> using{" "}
-    <FooterLink to="http://www.gatsbyjs.org">Gatsby</FooterLink>. Source code
-    available on <FooterLink to="">GitHub</FooterLink>.
+const Footer = () => (
+  <FooterBar>
+    Site made by <a>Greg Burger</a> using{" "}
+    <a href="http://www.gatsbyjs.org" target="_blank">
+      Gatsby
+    </a>. Source code available on{" "}
+    <a href="https://github.com/GregX999/99linesofcode" target="_blank">
+      GitHub
+    </a>.
   </FooterBar>
 );
-
-Footer.propTypes = {
-  pathname: PropTypes.string
-};
 
 export default Footer;
