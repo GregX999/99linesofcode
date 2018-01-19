@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Greg Burger <greg@gregburger.com>",
   "dependencies": {
-    "disqus-react": "^1.0.3",
     "gatsby": "^1.9.159",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-react-helmet": "^1.0.8",

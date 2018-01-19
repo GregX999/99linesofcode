@@ -49,7 +49,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return new Promise((resolve, reject) => {
     resolve(
       graphql(`
-        {
+        query {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
           ) {
@@ -93,13 +93,4 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       })
     );
   });
-};
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === "build-html") {
-    config.loader("null", {
-      test: /disqus-react/,
-      loader: "null-loader",
-    });
-  }
 };

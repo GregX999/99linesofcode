@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import Disqus from "disqus-react";
+import Disqus from "../lib/Disqus";
 import * as SITE from "../constants.js";
 
 const curlyStart = "{";
@@ -201,6 +201,15 @@ export const PostDetails = ({ frontmatter }) => {
         <VarLeft>date</VarLeft> = <Argument>"{frontmatter.date}"</Argument>
       </PostData>
       <PostData>
+        <VarLeft>comments</VarLeft> ={" "}
+        <Argument>
+          <Disqus.CommentCount
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </Argument>
+      </PostData>
+      <PostData>
         <VarLeft>topics</VarLeft> = {squareStart}
         {frontmatter.tags.map(tag => {
           return (
@@ -215,42 +224,6 @@ export const PostDetails = ({ frontmatter }) => {
       </PostData>
     </Post>
   );
-
-  // return (
-  //   <Post>
-  //     <PostTitle>
-  //       <TitleLink to={frontmatter.path}>{frontmatter.title}</TitleLink>
-  //     </PostTitle>
-  //     <PostExcerpt>
-  //       {twoSlashes} {frontmatter.excerpt}
-  //     </PostExcerpt>
-  //     <PostData>
-  //       <VarLeft>date</VarLeft> = <Argument>"{frontmatter.date}"</Argument>
-  //     </PostData>
-  //     <PostData>
-  //       <VarLeft>comments</VarLeft> ={" "}
-  //       <Argument>
-  //         <Disqus.CommentCount
-  //           shortname={disqusShortname}
-  //           config={disqusConfig}
-  //         />
-  //       </Argument>
-  //     </PostData>
-  //     <PostData>
-  //       <VarLeft>topics</VarLeft> = {squareStart}
-  //       {frontmatter.tags.map(tag => {
-  //         return (
-  //           <Tag key={tag}>
-  //             <TagLink key={tag} to={`/tags/${tag}`}>
-  //               {tag}
-  //             </TagLink>
-  //           </Tag>
-  //         );
-  //       })}
-  //       {squareEnd}
-  //     </PostData>
-  //   </Post>
-  // );
 };
 
 PostDetails.propTypes = {
