@@ -12,6 +12,15 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             classPrefix: "language-"
+          },
+          `gatsby-plugin-sharp`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              linkImagesToOriginal: false,
+              sizeByPixelDensity: true
+            }
           }
         ]
       }

@@ -41,9 +41,7 @@ article ol li {
 }
 
 article img {
-  display: block;
-  zoom: 50%;
-  margin: 0 auto;
+  z-index: 1;
 }
 
 article blockquote {

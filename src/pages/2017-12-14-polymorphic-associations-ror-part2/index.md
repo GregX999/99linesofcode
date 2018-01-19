@@ -12,9 +12,9 @@ This is the second part in a four-part series of articles about polymorphic asso
 
 The four parts are:
 
-1. [Introduction and how to create a basic Polymorphic Association](https://99linesofcode.com/polymorphic-associations-in-ruby-on-rails-part-1-introduction)
+1. [Introduction and how to create a basic Polymorphic Association](/polymorphic-associations-in-ruby-on-rails-part-1-introduction)
 2. **Reverse Polymorphic Associations**
-3. [Many-to-Many Polymorphic Associations](https://99linesofcode.com/polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations)
+3. [Many-to-Many Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations)
 4. _Coming Soon!_ - Testing Polymorphic Associations with RSpec and Factory Bot
 
 In the previous article we looked at the "standard" polymorphic association in Rails, where the child items (the comments) in the association can belong to different types of parent items (posts, photos and pages). This works nicely because with any has_one or has_many association the child model holds the foreign key, and a polymorphic association just adds a "foreign type" as well (in the last article's example, commentable\_id and commentable\_type).
@@ -28,11 +28,11 @@ Let's say we want the articles in our news blog to be made up of multiple media 
 
 Here's a diagram of what we want to do:
 
-![Different "article elements" can all belong to posts.](https://99linesofcode.com/wp-content/uploads/2018/01/reverse-poly.png)
+![Different "article elements" can all belong to posts.](reverse-poly.png)
 
 Here's a diagram of what models (and database fields) we have to make:
 
-![Example of reverse polymorphic models.](https://99linesofcode.com/wp-content/uploads/2018/01/reverse-poly-models.png)
+![Example of reverse polymorphic models.](reverse-poly-models.png)
 
 Let's generate the models (I'm including the models from the previous article in case you came straight to this article. But of course you wouldn't generate the same model twice in real life.)
 

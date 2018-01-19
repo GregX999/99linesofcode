@@ -13,8 +13,8 @@ This is the first part in a three-part series of articles about Polymorphic Asso
 The four parts are:
 
 1. **Introduction and how to create a basic Polymorphic Association**
-2. [Reverse Polymorphic Associations](https://99linesofcode.com/polymorphic-associations-in-ruby-on-rails-part-2-reverse-polymorphic-associations)
-3. [Many-to-Many Polymorphic Associations](https://99linesofcode.com/polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations)
+2. [Reverse Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-2-reverse-polymorphic-associations)
+3. [Many-to-Many Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations)
 4. _Coming Soon!_ - Testing Polymorphic Associations with RSpec and Factory Bot
 
 First thing's first... before talking about polymorphic associations, it's important that you to have a fairly strong grasp of the <em>standard</em> association types in Rails. These being:
@@ -32,13 +32,13 @@ If you don't understand how these work, or don't know how to implement them, rea
 
 So, it should be clear that a "normal" (non-polymorphic) association is an association between records of two different models. For example, a Post record and Comment records (a Post record has_many Comment records), or a User record and an Address record (a User record has_one Address record). And the inverse, a Comment record belongs_to a Post record, and an Address record belongs to a User record.
 
-![A comment belongs to a post.](https://99linesofcode.com/wp-content/uploads/2018/01/standard-assoc.png)
+![A comment belongs to a post.](standard-assoc.png)
 
 Simple, right?
 
 In a polymorphic association, a record of one type can belong to record of one of multiple other types. For example, let's say we have a news blog. Of course each Post record can have many Comment records, but maybe also Photo and Page records can have many Comment records. So each Comment record is able to belong to either a Post, Photo or Page record.
 
-![A comment can belong to any type of "commentable item".](https://99linesofcode.com/wp-content/uploads/2018/01/poly-assoc.png)
+![A comment can belong to any type of "commentable item".](poly-assoc.png)
 
 How do we do this? Let's dive right in and create some models. I'll explain what's going on after we get them created.
 

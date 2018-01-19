@@ -192,7 +192,7 @@ export const PostDetails = ({ frontmatter }) => {
   return (
     <Post>
       <PostTitle>
-        <TitleLink to={frontmatter.path}>{frontmatter.title}</TitleLink>
+        <TitleLink to={`/${frontmatter.path}`}>{frontmatter.title}</TitleLink>
       </PostTitle>
       <PostExcerpt>
         {twoSlashes} {frontmatter.excerpt}

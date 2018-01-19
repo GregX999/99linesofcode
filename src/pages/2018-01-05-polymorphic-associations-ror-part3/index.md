@@ -12,8 +12,8 @@ This is the third part in a four-part series of articles about polymorphic assoc
 
 The four parts are:
 
-1. [Introduction and how to create a basic Polymorphic Association](https://99linesofcode.com/polymorphic-associations-in-ruby-on-rails-part-1-introduction)
-2. [Reverse Polymorphic Associations](https://99linesofcode.com/polymorphic-associations-in-ruby-on-rails-part-2-reverse-polymorphic-associations)
+1. [Introduction and how to create a basic Polymorphic Association](/polymorphic-associations-in-ruby-on-rails-part-1-introduction)
+2. [Reverse Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-2-reverse-polymorphic-associations)
 3. **Many-to-Many Polymorphic Associations**
 4. _Coming Soon!_ - Testing Polymorphic Associations with RSpec and Factory Bot
 
@@ -23,13 +23,13 @@ On to another blog... let's give registered readers of the blog the ability to "
 
 Here's a diagram of what we want to do:
 
-![Readers can have many "favoritable" items and items can have many "readers who favorited it".](https://99linesofcode.com/wp-content/uploads/2018/01/mm-reverse-poly.png)
+![Readers can have many "favoritable" items and items can have many "readers who favorited it".](mm-reverse-poly.png)
 
 So a reader can favorite many posts, photos and authors, but also, a single post, photo or author can be favorited by many readers.
 
 Here's a diagram of what models (and database fields) we have to make:
 
-![Example of many-to-many polymorphic models.](https://99linesofcode.com/wp-content/uploads/2018/01/mm-reverse-poly-models.png)
+![Example of many-to-many polymorphic models.](mm-reverse-poly-models.png)
 
 Let's generate the models (I'm including the models from the previous article in case you came straight to this article. But of course you wouldn't generate the same model twice in real life.)
 
