@@ -42,13 +42,23 @@ const BlogPost = ({ data, location, pathContext }) => {
       <ArticleHeader frontmatter={frontmatter} />
       <Content dangerouslySetInnerHTML={{ __html: html }} />
       <ArticleFooter next={next} prev={prev} />
-
-      <Disqus.DiscussionEmbed
-        shortname={disqusShortname}
-        config={disqusConfig}
-      />
     </article>
   );
+
+  // return (
+  //   <article>
+  //     <BlogPostHelmet frontmatter={frontmatter} />
+  //
+  //     <ArticleHeader frontmatter={frontmatter} />
+  //     <Content dangerouslySetInnerHTML={{ __html: html }} />
+  //     <ArticleFooter next={next} prev={prev} />
+  //
+  //     <Disqus.DiscussionEmbed
+  //       shortname={disqusShortname}
+  //       config={disqusConfig}
+  //     />
+  //   </article>
+  // );
 };
 
 export const pageQuery = graphql`

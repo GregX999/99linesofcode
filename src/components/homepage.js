@@ -201,15 +201,6 @@ export const PostDetails = ({ frontmatter }) => {
         <VarLeft>date</VarLeft> = <Argument>"{frontmatter.date}"</Argument>
       </PostData>
       <PostData>
-        <VarLeft>comments</VarLeft> ={" "}
-        <Argument>
-          <Disqus.CommentCount
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
-        </Argument>
-      </PostData>
-      <PostData>
         <VarLeft>topics</VarLeft> = {squareStart}
         {frontmatter.tags.map(tag => {
           return (
@@ -224,11 +215,47 @@ export const PostDetails = ({ frontmatter }) => {
       </PostData>
     </Post>
   );
+
+  // return (
+  //   <Post>
+  //     <PostTitle>
+  //       <TitleLink to={frontmatter.path}>{frontmatter.title}</TitleLink>
+  //     </PostTitle>
+  //     <PostExcerpt>
+  //       {twoSlashes} {frontmatter.excerpt}
+  //     </PostExcerpt>
+  //     <PostData>
+  //       <VarLeft>date</VarLeft> = <Argument>"{frontmatter.date}"</Argument>
+  //     </PostData>
+  //     <PostData>
+  //       <VarLeft>comments</VarLeft> ={" "}
+  //       <Argument>
+  //         <Disqus.CommentCount
+  //           shortname={disqusShortname}
+  //           config={disqusConfig}
+  //         />
+  //       </Argument>
+  //     </PostData>
+  //     <PostData>
+  //       <VarLeft>topics</VarLeft> = {squareStart}
+  //       {frontmatter.tags.map(tag => {
+  //         return (
+  //           <Tag key={tag}>
+  //             <TagLink key={tag} to={`/tags/${tag}`}>
+  //               {tag}
+  //             </TagLink>
+  //           </Tag>
+  //         );
+  //       })}
+  //       {squareEnd}
+  //     </PostData>
+  //   </Post>
+  // );
 };
 
 PostDetails.propTypes = {
   frontmatter: PropTypes.object
 };
 
-const Homepage = () => <div></div>;
+const Homepage = () => <div />;
 export default Homepage;
