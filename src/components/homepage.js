@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Link from "gatsby-link";
-import Disqus from "../lib/Disqus";
-import * as SITE from "../constants.js";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Link from 'gatsby-link';
+import Disqus from '../lib/Disqus';
+import * as SITE from '../constants.js';
 
-const curlyStart = "{";
-const curlyEnd = "}";
-const squareStart = "[";
-const squareEnd = "]";
-const twoSlashes = " //";
+const curlyStart = '{';
+const curlyEnd = '}';
+const squareStart = '[';
+const squareEnd = ']';
+const twoSlashes = ' //';
 
 const Title = styled.h2`
   font-size: 1.6em;
@@ -93,7 +93,7 @@ const PostData = styled.div`
 
 const Tag = styled.span`
   &:not(:last-child)::after {
-    content: ", ";
+    content: ', ';
   }
 `;
 
@@ -139,7 +139,7 @@ const Function = styled.span`
 export const FakeCode = styled.div`
   color: #d7dae0; // light gray
   font-size: 0.8rem;
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Ubuntu Mono', monospace;
 
   @media (min-width: 590px) {
     font-size: 1rem;
@@ -162,7 +162,7 @@ export const FakeFunction = ({ tagName }) => (
     <Function>getBlogPosts</Function>({tagName ? (
       <TopicHash tagName={tagName} />
     ) : (
-      ""
+      ''
     )}) {curlyStart}
   </Indent1>
 );
@@ -201,7 +201,7 @@ export const PostDetails = ({ frontmatter }) => {
         <VarLeft>date</VarLeft> = <Argument>"{frontmatter.date}"</Argument>
       </PostData>
       <PostData>
-        <VarLeft>comments</VarLeft> ={" "}
+        <VarLeft>comments</VarLeft> ={' '}
         <Argument>
           <Disqus.CommentCount
             shortname={disqusShortname}

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Link from "gatsby-link";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Link from 'gatsby-link';
 
 export const Content = styled.div`
   font-size: 1rem;
@@ -10,20 +10,20 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Ubuntu Mono', monospace;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 `;
 
 const LineItem = styled.div`
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Ubuntu Mono', monospace;
   font-size: 1rem;
   margin-bottom: 0.3rem;
 `;
 
 const Tag = styled.span`
   &:not(:last-child)::after {
-    content: ", ";
+    content: ', ';
   }
 `;
 
@@ -37,7 +37,7 @@ export const ArticleHeader = ({ frontmatter }) => {
       <LineItem>postedBy("{frontmatter.author}")</LineItem>
       <LineItem>postedOn("{frontmatter.date}")</LineItem>
       <LineItem>
-        topics ={" "}
+        topics ={' '}
         {frontmatter.tags.map(tag => {
           return (
             <Tag key={tag}>
@@ -85,5 +85,5 @@ export const ArticleFooter = ({ next, prev }) => {
 //   prev: PropTypes.object
 // };
 
-const BlogPost = () => <div></div>;
+const BlogPost = () => <div />;
 export default BlogPost;
