@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { injectGlobal } from "styled-components";
-import Link from "gatsby-link";
-import Header from "./header.js";
-import Footer from "./footer.js";
-import Content from "./content.js";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { injectGlobal } from 'styled-components';
+import Link from 'gatsby-link';
+import Header from './header.js';
+import Footer from './footer.js';
+import Content from './content.js';
 
-import "./reset.css";
-import "./markdown.css";
-require("prismjs/themes/prism-okaidia.css");
+import './reset.css';
+import './markdown.css';
+require('prismjs/themes/prism-okaidia.css');
 
 injectGlobal`
   .darkBackground {
@@ -38,12 +38,12 @@ class TemplateWrapper extends React.Component {
 
   setBodyClass() {
     const path = this.props.location.pathname;
-    if (path == "/" || path.substring(0, 6) == "/tags/") {
-      document.body.classList.add("darkBackground");
-      document.body.classList.remove("whiteBackground");
+    if (path == '/' || path.substring(0, 6) == '/tags/') {
+      document.body.classList.add('darkBackground');
+      document.body.classList.remove('whiteBackground');
     } else {
-      document.body.classList.remove("darkBackground");
-      document.body.classList.add("whiteBackground");
+      document.body.classList.remove('darkBackground');
+      document.body.classList.add('whiteBackground');
     }
   }
 

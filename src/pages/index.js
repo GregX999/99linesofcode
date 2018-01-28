@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
+import React from 'react';
+import styled from 'styled-components';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 import {
   FakeCode,
@@ -10,7 +10,7 @@ import {
   FakeReturn,
   FakeEndBrackets,
   PostDetails
-} from "../components/homepage.js";
+} from '../components/homepage.js';
 
 const HomepageHelmet = () => {
   return (
@@ -18,17 +18,18 @@ const HomepageHelmet = () => {
       title="99 Lines of Code"
       meta={[
         {
-          name: "description",
+          name: 'description',
           content:
-            "An eclectic collection of coding thoughts, ideas and examples."
+            'An eclectic collection of coding thoughts, ideas and examples.'
         },
-        { name: "keywords", content: "" }
+        { name: 'keywords', content: '' }
       ]}
     />
   );
 };
 
 const IndexPage = ({ data, pathContext }) => {
+  console.log('data', data);
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <FakeCode>

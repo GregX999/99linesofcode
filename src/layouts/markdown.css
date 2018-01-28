@@ -57,17 +57,16 @@ article blockquote h3 {
   margin-bottom: 0.5em;
 }
 
-/* article p code {
+article p code {
   display: inline-block;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 0.9em;
-  color: white;
-  background: black;
+  font-size: 0.8em;
+  background: #e3eef4;
   margin: 0 0.2em;
   padding: 0 0.2em;
-} */
+}
 
-article pre[class*="language-"] {
+article pre[class*='language-'] {
   font-size: 0.8em;
   margin-top: 0;
   margin-bottom: 1.5em;

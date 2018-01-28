@@ -1,8 +1,8 @@
-const path = require("path");
+const path = require('path');
 
 const createTagPages = (createPage, posts) => {
-  const tagPageTemplate = path.resolve("src/templates/tag.js");
-  const allTagsTemplate = path.resolve("src/templates/all-tags.js");
+  const tagPageTemplate = path.resolve('src/templates/tag.js');
+  const allTagsTemplate = path.resolve('src/templates/all-tags.js');
 
   const postsByTag = {};
 
@@ -21,7 +21,7 @@ const createTagPages = (createPage, posts) => {
   const tags = Object.keys(postsByTag);
 
   createPage({
-    path: "/tags",
+    path: '/tags',
     component: allTagsTemplate,
     context: {
       tags: tags.sort()
@@ -44,7 +44,7 @@ const createTagPages = (createPage, posts) => {
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
-  const blogPostTemplate = path.resolve("src/templates/blog-post.js");
+  const blogPostTemplate = path.resolve('src/templates/blog-post.js');
 
   return new Promise((resolve, reject) => {
     resolve(

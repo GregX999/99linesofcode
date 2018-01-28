@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "gatsby-link";
-import { Title } from "../components/blog-post.js";
+import React from 'react';
+import Link from 'gatsby-link';
+import { Title } from '../components/blog-post.js';
 
 const NotFoundPage = () => (
   <div>
