@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Disqus from '../lib/Disqus';
-// import Disqus from "disqus-react";
 import * as SITE from '../constants.js';
 
 import {

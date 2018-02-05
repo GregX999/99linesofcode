@@ -1,5 +1,5 @@
-import React from "react";
-import { insertScript, removeScript, debounce } from "./utils";
+import React from 'react';
+import { insertScript, removeScript, debounce } from './utils';
 
 const queueResetCount = debounce(
   () => {
@@ -11,7 +11,7 @@ const queueResetCount = debounce(
 
 export class CommentCount extends React.Component {
   componentDidMount() {
-    this.DOC = window.document;
+    this.doc = window.document;
     this.loadInstance();
   }
 
@@ -37,17 +37,17 @@ export class CommentCount extends React.Component {
   }
 
   loadInstance() {
-    if (this.DOC.getElementById("dsq-count-scr")) queueResetCount();
+    if (this.doc.getElementById('dsq-count-scr')) queueResetCount();
     else
       insertScript(
         `https://${this.props.shortname}.disqus.com/count.js`,
-        "dsq-count-scr",
-        this.DOC.body
+        'dsq-count-scr',
+        this.doc.body
       );
   }
 
   cleanInstance() {
-    removeScript("dsq-count-scr", this.DOC.body);
+    removeScript('dsq-count-scr', this.doc.body);
 
     // count.js only reassigns this window object if it's undefined.
     window.DISQUSWIDGETS = undefined;
@@ -59,9 +59,7 @@ export class CommentCount extends React.Component {
         className="disqus-comment-count"
         data-disqus-identifier={this.props.config.identifier}
         data-disqus-url={this.props.config.url}
-      >
-        {this.props.children}
-      </span>
+      />
     );
   }
 }

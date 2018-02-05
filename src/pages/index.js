@@ -1,16 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import PostList from '../components/PostList';
 
-import {
-  FakeCode,
-  FakeClass,
-  FakeFunction,
-  FakeReturn,
-  FakeEndBrackets,
-  PostDetails
-} from '../components/homepage.js';
+const IndexPage = ({ data, pathContext }) => {
+  const { edges: posts } = data.allMarkdownRemark;
+
+  return (
+    <div>
+      <HomepageHelmet />
+      <PostList posts={posts} />
+    </div>
+  );
+};
+
+export default IndexPage;
 
 const HomepageHelmet = () => {
   return (
@@ -28,26 +32,6 @@ const HomepageHelmet = () => {
   );
 };
 
-const IndexPage = ({ data, pathContext }) => {
-  console.log('data', data);
-  const { edges: posts } = data.allMarkdownRemark;
-  return (
-    <FakeCode>
-      <HomepageHelmet />
-      <FakeClass />
-      <FakeFunction />
-      <FakeReturn />
-
-      {posts.map(({ node: post }) => {
-        const { frontmatter } = post;
-        return <PostDetails frontmatter={frontmatter} key={frontmatter.slug} />;
-      })}
-
-      <FakeEndBrackets />
-    </FakeCode>
-  );
-};
-
 export const query = graphql`
   query IndexQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -56,7 +40,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "MMM DD, YYYY")
+            date(formatString: "MMM DD YYYY")
             path
             tags
             excerpt
@@ -67,5 +51,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default IndexPage;
