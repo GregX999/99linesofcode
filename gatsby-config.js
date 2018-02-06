@@ -3,7 +3,6 @@ module.exports = {
     title: `99 Lines of Code`
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-transformer-remark`,
