@@ -22,14 +22,6 @@ article a:hover {
   text-decoration: underline;
 }
 
-article strong {
-  font-weight: bold;
-}
-
-article em {
-  font-style: italic;
-}
-
 article ul li {
   list-style: disc;
   margin-left: 1.5em;
@@ -59,7 +51,6 @@ article blockquote h3 {
 
 article p code {
   display: inline-block;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 0.8em;
   background: #e3eef4;
   margin: 0 0.2em;

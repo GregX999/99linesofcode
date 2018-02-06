@@ -3,7 +3,6 @@ module.exports = {
     title: `99 Lines of Code`
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -11,7 +10,7 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-prismjs`,
-            classPrefix: "language-"
+            classPrefix: 'language-'
           },
           `gatsby-plugin-sharp`,
           {
@@ -30,6 +29,18 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Roboto:400,400i,700,700i`, `Comfortaa:400,700`]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        precision: 8
       }
     }
   ]

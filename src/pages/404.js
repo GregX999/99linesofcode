@@ -1,14 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { Title } from '../components/blog-post.js';
 
 const NotFoundPage = () => (
-  <div>
-    <Title>Not Found</Title>
-    <p>You just hit a route that doesn&#39;t exist... oh, the sadness. 🙁</p>
+  <div className="error404">
+    <h2>There's Nothing Over Here</h2>
+    <p>You just hit a route that doesn't exist... oh, the sadness. 🙁</p>
     <p>
-      But you can head to <Link to="/">the homepage</Link> and try to find what
-      you&#39;re looking for.
+      I'm not sure what you're looking for, but maybe you can find it if you
+      head back to <Link to="/">the homepage</Link>.
     </p>
   </div>
 );
