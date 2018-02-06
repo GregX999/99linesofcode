@@ -235,3 +235,19 @@ a {
     }
   }
 }
+
+// Errors
+
+.error404 {
+  background-color: white;
+  border: 1px solid $darkbody_color;
+  padding: 0 2em 1em 2em;
+  margin-bottom: 1.6rem;
+  box-shadow: 0.4rem 0.4rem $midbody_color;
+
+  & h2 {
+    font-family: $title_font;
+    color: $accent_color1;
+    margin-bottom: 0.4em;
+  }
+}

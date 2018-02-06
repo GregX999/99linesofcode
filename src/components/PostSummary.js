@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Disqus from '../lib/Disqus';
-import Tags from './tags';
+import Tags from './Tags';
 import * as SITE from '../constants.js';
 
 const PostSummary = ({ frontmatter, selectedTag }) => {

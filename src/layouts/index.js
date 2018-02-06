@@ -3,9 +3,9 @@ import Link from 'gatsby-link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import '../css/index.scss';
-import '../css//markdown.css';
-require('prismjs/themes/prism-okaidia.css');
+require('../css/index.scss');
+require('../css//markdown.css');
+require('../css/prism_theme.css');
 
 const TemplateWrapper = ({ children }) => (
   <div className="page">
