@@ -43,6 +43,61 @@ a {
 
 .content {
   flex: 1 0 auto;
+  width: 800px;
+  margin: auto;
+  margin-top: 6rem;
+}
+
+// Universal components
+
+.tags-wrapper {
+  color: $xdarkbody_color;
+  font-size: 0.8em;
+  padding: 0.5em 0;
+}
+
+.tag-list {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__tag {
+  }
+}
+
+.tag {
+  display: inline-block;
+  list-style: none;
+
+  &--default a {
+    border: 1px solid $xdarkbody_color;
+    border-radius: 0.7em;
+    margin-left: 1em;
+    padding: 0.1em 0.8em 0.2em 0.8em;
+    color: $xdarkbody_color;
+
+    &:hover {
+      background-color: $darkbody_color;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &--selected a {
+    background-color: $xdarkbody_color;
+    border: 1px solid $xdarkbody_color;
+    border-radius: 0.7em;
+    margin-left: 1em;
+    padding: 0.1em 0.8em 0.2em 0.8em;
+    color: white;
+
+    &:hover {
+      background-color: $darkbody_color;
+      color: $xdarkbody_color;
+      text-decoration: none;
+    }
+  }
 }
 
 // Styles for site header
@@ -63,7 +118,7 @@ a {
   &__logotype {
     display: inline-block;
     font-family: $title_font;
-    margin: 0;
+    margin: 4px 0 0 0;
   }
 
   &__subtitle {
@@ -91,11 +146,9 @@ a {
   }
 }
 
-// Styles for homepage
+// Styles for homepage & tag page
 
 .post-list {
-  margin: auto;
-  margin-top: 8rem;
 }
 
 .post-summary {
@@ -104,7 +157,6 @@ a {
   padding: 0 2em 1em 3em;
   position: relative;
   text-align: left;
-  width: 800px;
   margin: auto;
   margin-bottom: 1.6rem;
   background-color: white;
@@ -150,21 +202,6 @@ a {
     }
   }
 
-  &__tags-wrapper {
-    color: $xdarkbody_color;
-    font-size: 0.8em;
-  }
-
-  &__tag-list {
-    display: inline-block;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    &__tag {
-    }
-  }
-
   &__comment-count {
     position: absolute;
     bottom: 0;
@@ -175,36 +212,26 @@ a {
   }
 }
 
-.tag {
-  display: inline-block;
-  list-style: none;
+// Styles for blog page
 
-  &--default a {
-    border: 1px solid $xdarkbody_color;
-    border-radius: 0.7em;
-    margin-left: 1em;
-    padding: 0.1em 0.8em 0.2em 0.8em;
-    color: $xdarkbody_color;
+.article {
+  background-color: white;
+  border: 1px solid $darkbody_color;
+  padding: 0 2em 1em 2em;
+  margin-bottom: 1.6rem;
+  box-shadow: 0.4rem 0.4rem $midbody_color;
 
-    &:hover {
-      background-color: $darkbody_color;
-      color: white;
-      text-decoration: none;
-    }
+  & h2 {
+    font-family: $title_font;
+    color: $accent_color1;
+    margin-bottom: 0.4em;
   }
 
-  &--selected a {
-    background-color: $xdarkbody_color;
-    border: 1px solid $xdarkbody_color;
-    border-radius: 0.7em;
-    margin-left: 1em;
-    padding: 0.1em 0.8em 0.2em 0.8em;
-    color: white;
-
-    &:hover {
-      background-color: $darkbody_color;
+  &__header {
+    &__details {
       color: $xdarkbody_color;
-      text-decoration: none;
+      font-size: 0.8em;
+      margin-bottom: 2em;
     }
   }
 }

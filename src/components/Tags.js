@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 const Tags = ({ tags, selectedTag }) => (
-  <div className="post-summary__tags-wrapper">
+  <div className="tags-wrapper">
     Topics:
-    <ul className="post-summary__tag-list">
+    <ul className="tag-list">
       {tags.map(tag => (
         <li
           className={`tag ${

@@ -1,27 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Disqus from '../lib/Disqus';
+import Tags from '../components/Tags';
 import * as SITE from '../constants.js';
-
-import {
-  ArticleHeader,
-  ArticleFooter,
-  Content
-} from '../components/blog-post.js';
-
-const BlogPostHelmet = ({ frontmatter }) => {
-  return (
-    <Helmet
-      title={`${frontmatter.title} @ 99 Lines of Code`}
-      meta={[
-        { name: 'description', content: frontmatter.title },
-        { name: 'keywords', content: `${frontmatter.tags.join(', ')}` }
-      ]}
-    />
-  );
-};
 
 const BlogPost = ({ data, location, pathContext }) => {
   const { markdownRemark: post } = data;
@@ -36,14 +18,44 @@ const BlogPost = ({ data, location, pathContext }) => {
   };
 
   return (
-    <article>
+    <div className="article">
       <BlogPostHelmet frontmatter={frontmatter} />
 
       <ArticleHeader frontmatter={frontmatter} />
-      <Content dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <ArticleFooter frontmatter={frontmatter} />
 
       <Disqus.ThreadEmbed shortname={disqusShortname} config={disqusConfig} />
-    </article>
+    </div>
+  );
+};
+
+export default BlogPost;
+
+const ArticleHeader = ({ frontmatter }) => (
+  <div className="article__header">
+    <h2>{frontmatter.title}</h2>
+    <div className="article__header__details">
+      By: {frontmatter.author} | {frontmatter.date}
+    </div>
+  </div>
+);
+
+const ArticleFooter = ({ frontmatter }) => (
+  <div className="article__footer">
+    <Tags tags={frontmatter.tags} />
+  </div>
+);
+
+const BlogPostHelmet = ({ frontmatter }) => {
+  return (
+    <Helmet
+      title={`${frontmatter.title} @ 99 Lines of Code`}
+      meta={[
+        { name: 'description', content: frontmatter.title },
+        { name: 'keywords', content: `${frontmatter.tags.join(', ')}` }
+      ]}
+    />
   );
 };
 
@@ -63,5 +75,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default BlogPost;
