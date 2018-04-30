@@ -8,14 +8,13 @@ excerpt: "In the 2nd part of this series, we'll dive into reverse polymorphic as
 slug: "171214-poly_assoc_p2"
 ---
 
-This is the second part in a four-part series of articles about polymorphic associations in Ruby on Rails, using Active Model, database migrations, RSpec and Factory Bot (formerly Factory Girl). This part will explain reverse polymorphic associations - what they are and how to make them.
+This is the second part in a three-part series of articles about polymorphic associations in Ruby on Rails, using Active Model. This part will explain reverse polymorphic associations - what they are and how to make them.
 
 The four parts are:
 
 1. [Introduction and how to create a basic Polymorphic Association](/polymorphic-associations-in-ruby-on-rails-part-1-introduction)
 2. **Reverse Polymorphic Associations**
 3. [Many-to-Many Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations)
-4. _Coming Soon!_ - Testing Polymorphic Associations with RSpec and Factory Bot
 
 In the previous article we looked at the "standard" polymorphic association in Rails, where the child items (the comments) in the association can belong to different types of parent items (posts, photos and pages). This works nicely because with any has_one or has_many association the child model holds the foreign key, and a polymorphic association just adds a "foreign type" as well (in the last article's example, commentable\_id and commentable\_type).
 
@@ -49,10 +48,10 @@ And, the association model.
 rails g model ArticleElement sequence:int references:article references:element{polymorphic}
 ```
 
-Let's look at the models. First, the Post model:
+Let's look at the models. First, the Article model:
 
 ```ruby
-class Post < ApplicationRecord
+class Article < ApplicationRecord
   has_many :article_elements, dependent: :destroy
 end
 ```
@@ -130,3 +129,5 @@ article = Article.find(:article_id)
 photo = Photo.create({ caption:"Alien Abduction Infographic", filename:"aa_info.jpg" })
 Article.article_elements.create({ element: photo })
 ```
+
+Definitely more involved than "standard" polymorphic associations, but not too bad once you understand what you need to do.

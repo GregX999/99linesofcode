@@ -8,14 +8,13 @@ excerpt: "What are polymorphic associations and how do you make them using Activ
 slug: "171127-poly_assoc_p1"
 ---
 
-This is the first part in a three-part series of articles about Polymorphic Associations in Ruby on Rails, using Active Model, database migrations, RSpec and Factory Bot (formerly Factory Girl). This first part will introduce the concept and show how to construct the most basic polymorphic association.
+This is the first part in a three-part series of articles about Polymorphic Associations in Ruby on Rails using Active Model. This first part will introduce the concept and show how to construct the most basic polymorphic association.
 
 The four parts are:
 
 1. **Introduction and how to create a basic Polymorphic Association**
 2. [Reverse Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-2-reverse-polymorphic-associations)
 3. [Many-to-Many Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations)
-4. _Coming Soon!_ - Testing Polymorphic Associations with RSpec and Factory Bot
 
 First thing's first... before talking about polymorphic associations, it's important that you to have a fairly strong grasp of the <em>standard</em> association types in Rails. These being:
 

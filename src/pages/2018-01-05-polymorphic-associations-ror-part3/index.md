@@ -4,18 +4,17 @@ author: "Greg Burger"
 date: "2018-01-05"
 path: "polymorphic-associations-in-ruby-on-rails-part-3-many-to-many-polymorphic-associations"
 tags: ["ruby-on-rails", "polymorphic-associations"]
-excerpt: "In the 3rd part of this series, we'll take a quick look at many-to-many polymorphic associations using ActiveModel in Ruby on Rails."
+excerpt: "In the last part of this series, we'll take a quick look at many-to-many polymorphic associations using ActiveModel in Ruby on Rails."
 slug: "180105-poly_assoc_p3"
 ---
 
-This is the third part in a four-part series of articles about polymorphic associations in Ruby on Rails, using Active Model, database migrations, RSpec and Factory Bot (formerly Factory Girl). This part covers many-to-many polymorphic associations.
+This is the last part in a three-part series of articles about polymorphic associations in Ruby on Rails, using Active Model. This part covers many-to-many polymorphic associations.
 
-The four parts are:
+The three parts are:
 
 1. [Introduction and how to create a basic Polymorphic Association](/polymorphic-associations-in-ruby-on-rails-part-1-introduction)
 2. [Reverse Polymorphic Associations](/polymorphic-associations-in-ruby-on-rails-part-2-reverse-polymorphic-associations)
 3. **Many-to-Many Polymorphic Associations**
-4. _Coming Soon!_ - Testing Polymorphic Associations with RSpec and Factory Bot
 
 In the previous articles we looked at basic and reverse polymorphic associations. A many-to-many polymorphic association is very similar to a reverse polymorphic association in that it will make use of an association table (join table).
 
@@ -167,3 +166,5 @@ end
 current_reader = Reader(:reader_id)
 puts current_reader.favorites.authors
 ```
+
+What could be easier?!
